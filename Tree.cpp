@@ -132,7 +132,6 @@ void Tree::remove(int i) {
 		return;
 		//return 2147483647;
 	}
-	TreeSize--;
 	TNode* current = head;
 	while (current->getdata() != i)
 	{
@@ -210,6 +209,7 @@ void Tree::remove(int i) {
 		return;
 	}
 	delete current;
+	TreeSize--;
 	//return i;
 }
 
