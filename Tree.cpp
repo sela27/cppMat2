@@ -201,7 +201,7 @@ void Tree::remove(int i) {
 		remove(replace->getdata());
 		current->setdata(number);
                 //return i;
-		//return;
+		return;
 	}
 	delete current;
 	//return i;
