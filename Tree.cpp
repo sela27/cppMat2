@@ -39,7 +39,6 @@ TNode* Tree::gethead() {
 
 void Tree::insert(int i) {
 
-	cout << "function insert was called on " << i << " " << endl;
 	if (contains(i))
 	{
 		throw string(to_string(i) + " is allready in the tree!");
@@ -85,7 +84,6 @@ void Tree::insert(int i) {
 }
 
 bool Tree::contains(int i) {
-	cout << "function contains was called on " << i << " " << endl;
 	TNode* current = head;
 	while (current != NULL) {
 		if (current->getdata() == i) {
@@ -103,7 +101,6 @@ bool Tree::contains(int i) {
 
 
 TNode* Tree::search(int i) {
-	cout << "function search was called on " << i << " " << endl;
 	TNode* current = head;
 	while (current != NULL) {
 		if (current->getdata() == i) {
@@ -124,13 +121,11 @@ TNode* Tree::search(int i) {
 
 void Tree::remove(int i) {
 
-	cout << "function remove was called on " << i << " " << endl;
 
 	if (!contains(i))
 	{
 		throw string(to_string(i) + " is not in the tree!");
 		return;
-		//return 2147483647;
 	}
 	TNode* current = head;
 	while (current->getdata() != i)
@@ -205,21 +200,17 @@ void Tree::remove(int i) {
                 int number=replace->getdata();
 		remove(replace->getdata());
 		current->setdata(number);
-                //return i;
 		return;
 	}
 	delete current;
 	TreeSize--;
-	//return i;
 }
 
 int Tree::size() {
-	cout << "function size was called" << endl;
 	return TreeSize;
 }
 
 int Tree::root() {
-	cout << "function root was called" << endl;
 	if (head == NULL)
 	{
 		throw string("root is null!");
@@ -228,7 +219,6 @@ int Tree::root() {
 }
 
 int Tree::parent(int i) {
-	cout << "function parent was called on " << i << " " << endl;
 	TNode* temp = search(i);
 	if (temp == NULL)
 		throw string(to_string(i) + " is not in the tree");
@@ -238,7 +228,6 @@ int Tree::parent(int i) {
 }
 
 int Tree::left(int i) {
-	cout << "function left was called on " << i << " " << endl;
 	TNode* temp = search(i);
 	if (temp == NULL)
 		throw string(to_string(i) + " is not in the tree");
@@ -248,7 +237,6 @@ int Tree::left(int i) {
 }
 
 int Tree::right(int i) {
-	cout << "function right was called on " << i << " " << endl;
 	TNode* temp = search(i);
 	if (temp == NULL)
 		throw string(to_string(i) + " is not in the tree");
