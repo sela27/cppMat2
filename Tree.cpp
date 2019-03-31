@@ -129,6 +129,7 @@ void Tree::remove(int i) {
 	if (!contains(i))
 	{
 		throw string(to_string(i) + " is not in the tree!");
+		return;
 		//return 2147483647;
 	}
 	TreeSize--;
@@ -213,10 +214,12 @@ void Tree::remove(int i) {
 }
 
 int Tree::size() {
+	cout << "function size was called" << endl;
 	return TreeSize;
 }
 
 int Tree::root() {
+	cout << "function root was called" << endl;
 	if (head == NULL)
 	{
 		throw string("root is null!");
