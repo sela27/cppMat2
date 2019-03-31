@@ -60,7 +60,7 @@ namespace ariel
 		void setHead(TNode* t);
 		TNode* gethead();
 		void insert(int i);
-		int remove(int i);
+		void remove(int i);
 		int size();
 		bool contains(int i);
 		int root();

@@ -119,12 +119,12 @@ TNode* Tree::search(int i) {
 
 
 
-int Tree::remove(int i) {
+void Tree::remove(int i) {
 
 	if (!contains(i))
 	{
 		throw string(to_string(i) + " is not in the tree!");
-		return 2147483647;
+		//return 2147483647;
 	}
 	TreeSize--;
 	TNode* current = head;
@@ -200,10 +200,11 @@ int Tree::remove(int i) {
                 int number=replace->getdata();
 		remove(replace->getdata());
 		current->setdata(number);
-                return i;
+                //return i;
+		return;
 	}
 	delete current;
-	return i;
+	//return i;
 }
 
 int Tree::size() {
