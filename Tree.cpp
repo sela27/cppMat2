@@ -225,6 +225,7 @@ int Tree::root() {
 }
 
 int Tree::parent(int i) {
+	cout << "function parent was called on " << i << " " << endl;
 	TNode* temp = search(i);
 	if (temp == NULL)
 		throw string(to_string(i) + " is not in the tree");
@@ -234,6 +235,7 @@ int Tree::parent(int i) {
 }
 
 int Tree::left(int i) {
+	cout << "function left was called on " << i << " " << endl;
 	TNode* temp = search(i);
 	if (temp == NULL)
 		throw string(to_string(i) + " is not in the tree");
@@ -243,6 +245,7 @@ int Tree::left(int i) {
 }
 
 int Tree::right(int i) {
+	cout << "function right was called on " << i << " " << endl;
 	TNode* temp = search(i);
 	if (temp == NULL)
 		throw string(to_string(i) + " is not in the tree");
