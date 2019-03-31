@@ -39,6 +39,7 @@ TNode* Tree::gethead() {
 
 void Tree::insert(int i) {
 
+	cout << "function insert was called on " << i << " " << endl;
 	if (contains(i))
 	{
 		throw string(to_string(i) + " is allready in the tree!");
@@ -84,6 +85,7 @@ void Tree::insert(int i) {
 }
 
 bool Tree::contains(int i) {
+	cout << "function contains was called on " << i << " " << endl;
 	TNode* current = head;
 	while (current != NULL) {
 		if (current->getdata() == i) {
@@ -101,6 +103,7 @@ bool Tree::contains(int i) {
 
 
 TNode* Tree::search(int i) {
+	cout << "function search was called on " << i << " " << endl;
 	TNode* current = head;
 	while (current != NULL) {
 		if (current->getdata() == i) {
@@ -120,6 +123,8 @@ TNode* Tree::search(int i) {
 
 
 void Tree::remove(int i) {
+
+	cout << "function remove was called on " << i << " " << endl;
 
 	if (!contains(i))
 	{
@@ -144,7 +149,6 @@ void Tree::remove(int i) {
 	//case 1:leaf
 
 	if (current->getleft() == NULL && current->getright() == NULL) {
-		cout << "function remove case 1 was called " << endl;
 		if (father == NULL) {
 
 			head = NULL;
@@ -163,7 +167,6 @@ void Tree::remove(int i) {
 	}
 	//case 2:current has only child
 	else if (current->getleft() == NULL) {
-		cout << "function remove case 2 was called " << endl;
 		if (father == NULL) {
 			head = current->getright();
 			head->setfather(NULL);
@@ -196,7 +199,6 @@ void Tree::remove(int i) {
 	// case 3: two children
 	else
 	{
-		cout << "function remove case 3 was called " << endl;
 		TNode* replace = current->getright();
 		while (replace->getleft() != NULL)
 			replace = replace->getleft();
