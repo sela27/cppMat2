@@ -194,9 +194,9 @@ void Tree::remove(int i) {
 	// case 3: two children
 	else
 	{
-		TNode* replace = current->getleft();
-		while (replace->getright() != NULL)
-			replace = replace->getright();
+		TNode* replace = current->getright();
+		while (replace->getleft() != NULL)
+			replace = replace->getleft();
                 int number=replace->getdata();
 		remove(replace->getdata());
 		current->setdata(number);
