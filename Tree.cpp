@@ -191,14 +191,16 @@ int Tree::remove(int i) {
 		}
 	}
 
-	// case 2: two children
+	// case 3: two children
 	else
 	{
 		TNode* replace = current->getleft();
 		while (replace->getright() != NULL)
 			replace = replace->getright();
+                int number=replace->getdata();
 		remove(replace->getdata());
-		current->setdata(replace->getdata());
+		current->setdata(number);
+                return i;
 	}
 	delete current;
 	return i;
